@@ -1,0 +1,187 @@
+*{
+     margin: 0;
+     padding: 0;
+}
+ :root{
+     --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+     --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+     --GrayishBlue: hsl(212, 23%, 69%);
+     --LightGrayishBlue: hsl(210, 46%, 95%);
+}
+ html, body{
+     height: 100%;
+}
+ body{
+     font-size: 13px;
+     font-family: 'Manrope', sans-serif;
+     background: var(--LightGrayishBlue);
+     color: var(--DesaturatedDarkBlue);
+}
+ img{
+     width: 100%;
+     height: auto;
+}
+ h1{
+     color: var(--VeryDarkGrayishBlue);
+     font-size: 1.7em;
+     font-weight: 700;
+     margin-bottom: 1em;
+}
+ p{
+     color: var(--DesaturatedDarkBlue);
+     margin-bottom: 3em;
+     font-size: 1.1em;
+}
+ #main{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100%;
+     width: 100%;
+}
+ .container{
+     display: flex;
+     border-radius: 15px;
+     background: #fff;
+     max-width: 70em;
+     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 30px;
+}
+ .card{
+     display: flex;
+     border-radius: 15px 0 0 15px;
+     overflow: hidden;
+}
+ .card img{
+     object-fit: cover;
+}
+ .content{
+     padding: 3em;
+     max-width: 35em;
+}
+ .info-block{
+     display: flex;
+}
+ .author{
+     display: flex;
+     width: 100%;
+}
+ .avatar{
+     width: 40px;
+     margin-right: 20px;
+}
+ .info{
+     margin-right: 20px;
+}
+ .name{
+     font-weight: bold;
+     color: var(--VeryDarkGrayishBlue);
+}
+ .date{
+}
+ .share{
+     background: var(--LightGrayishBlue);
+     padding:10px;
+     border-radius: 50%;
+     width: 20px;
+     height: 20px;
+     position: relative;
+     cursor: pointer;
+}
+ .share:hover .share-box{
+     opacity: 1;
+}
+ .share-box{
+     background: var(--VeryDarkGrayishBlue) ;
+     padding: 0.7em 3em;
+     border-radius: 15px;
+     color: var(--GrayishBlue);
+     text-transform: uppercase;
+     position: absolute;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     top: -230%;
+     left: -280%;
+     opacity: 0;
+     transition: 0.2s ease;
+     letter-spacing: 0.3em;
+     box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 30px;
+}
+ .share-box:after{
+     border: 1em solid transparent;
+     border-top-color: var(--VeryDarkGrayishBlue) ;
+     content: '';
+     margin-left: -1em;
+     position: absolute;
+     top: 100%;
+     left: 50%;
+     width: 0;
+     height: 0;
+}
+ .share-box a{
+     width: 20px;
+     height: 20px;
+     margin: 10px;
+     display: flex;
+}
+ .social{
+     display: flex;
+}
+ .share-hover{
+     display: none;
+}
+ .avatar img{
+     border-radius: 50%;
+}
+ .attribution {
+     font-size: 11px;
+     text-align: center;
+     position: absolute;
+     bottom: 0;
+}
+ .attribution a {
+     color: hsl(228, 45%, 44%);
+}
+ @media only screen and (max-width: 480px){
+     h1{
+         font-size: 1.2em;
+         margin-bottom: 1.5em;
+    }
+     .container{
+         display: block;
+         max-width: 25em;
+         border-radius: 15px;
+         overflow: hidden;
+    }
+     .card{
+         border-radius: 0;
+    }
+     .share-box{
+         border-radius: 0px;
+         padding: 3.2em;
+         left: -700%;
+         bottom: 0;
+         top: 0;
+         opacity: 0;
+         transition: 0.2s ease;
+         box-shadow: none;
+         z-index: 200;
+         width: 20em;
+         text-align: center;
+         display: flex;
+    }
+     .share-box:after{
+         display: none;
+    }
+     .share-hover{
+         display: block;
+         background: var(--DesaturatedDarkBlue);
+         padding:10px;
+         border-radius: 50%;
+         width: 20px;
+         height: 20px;
+         position: absolute;
+         right: 3em;
+         cursor: pointer;
+    }
+}
